@@ -28,8 +28,14 @@ public class _01_RobotRace {
 					if(robots[i].getY()<0) {
 						isRacing = false;
 					}
-					robots[i].move(r.nextInt(50));
+				Thread t1 = new Thread(()->	robots[0].move(r.nextInt(50)));
+				Thread t2 = new Thread(()-> robots[1].move(r.nextInt(50)));
+				Thread t3 = new Thread(() -> robots[2].move(r.nextInt(50)));
+			t1.start();
+			t2.start();
+			t3.start();
 				}
+			
 			}
 			//4. make each robot start at the bottom of the screen, side by side, facing up
 	
